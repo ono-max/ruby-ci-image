@@ -72,7 +72,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   python3-pip \
   pipx \
   openjdk-8-jdk
-
+ENV PATH="$PATH:/root/.local/bin"
 RUN pipx ensurepath
 RUN pip3 install --no-cache-dir --user wheel
 RUN pip3 install --no-cache-dir --user launchable
