@@ -72,7 +72,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   python3-pip \
   openjdk-8-jdk
 
-# RUN pip3 install --no-cache-dir wheel
-RUN pip3 install --no-cache-dir launchable
+RUN pip3 install --no-cache-dir --user wheel
+RUN pip3 install --no-cache-dir --user launchable
+RUN launchable verify
 
 USER ci
