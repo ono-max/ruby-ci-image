@@ -67,12 +67,14 @@ RUN adduser --disabled-password --gecos '' ci && adduser ci sudo
 
 # Setup Launchable
 RUN apt-get update && apt-get install -y --no-install-recommends \
-  python3-venv \
+  python3 \
   python3-setuptools \
   python3-pip \
+  pipx \
   openjdk-8-jdk
 
-ENV PATH="$PATH:$(python -msite --user-base)/bin"
+RUN pipx ensurepath
+RUN pipx ensurepath --global
 RUN pip3 install --no-cache-dir --user wheel
 RUN pip3 install --no-cache-dir --user launchable
 
