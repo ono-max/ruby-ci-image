@@ -72,8 +72,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   python3-pip \
   openjdk-8-jdk
 
+ENV PATH=$PATH:$(python -msite --user-base)/bin
 RUN pip3 install --no-cache-dir --user wheel
 RUN pip3 install --no-cache-dir --user launchable
-RUN launchable verify
 
 USER ci
