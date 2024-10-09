@@ -70,7 +70,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   openjdk-8-jdk \
   python3 \
   python3-setuptools \
-  pipx \
+  pipx
 ENV PATH="$PATH:/root/.local/bin"
 RUN pipx install wheel
 RUN pipx install launchable
