@@ -66,14 +66,14 @@ RUN set -ex                                           \
 RUN adduser --disabled-password --gecos '' ci && adduser ci sudo
 
 # Setup Launchable
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
   python3-venv \
   python3-setuptools \
   python3-pip \
   pipx \
   openjdk-8-jdk
 ENV PATH="$PATH:/root/.local/bin"
-RUN pipx ensurepath
+RUN pipx install wheel
 RUN pipx install launchable
 
 USER ci
