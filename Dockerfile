@@ -73,7 +73,7 @@ RUN apt-get install -y --no-install-recommends \
   pipx \
   openjdk-8-jdk
 ENV PATH="$PATH:/root/.local/bin"
-RUN pipx install wheel
 RUN pipx install launchable
+RUN launchable verify
 
 USER ci
