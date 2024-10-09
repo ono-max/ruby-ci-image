@@ -4,9 +4,9 @@ on:
   release:
     types: [published]
   pull_request:
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
   schedule:
 
     # Every Wednesday on 01:32 UTC.  This timing is handy because while
