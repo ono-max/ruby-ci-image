@@ -69,13 +69,11 @@ RUN adduser --disabled-password --gecos '' ci && adduser ci sudo
 RUN apt-get update && apt-get install -y --no-install-recommends \
   python3 \
   python3-setuptools \
-  pipx \
+  python3-pip \
   && apt-get -y clean \
   && rm -rf /var/lib/apt/lists/*
 
-ENV PATH="$PATH:/root/.local/bin"
-
-RUN pipx install wheel
-RUN pipx install launchable
+RUN pip3 install --no-cache-dir wheel
+RUN pip3 install --no-cache-dir launchable
 
 USER ci
